@@ -7,12 +7,14 @@ import { TabItem }            from './tab-item';
   selector: 'app-root',
   template: `
     <div>
-      <app-tabs [tabs]="tabs" (add)="onAdd()"></app-tabs>
+      <app-tabs [tabs]="tabs" [active]="active" (add)="onAdd()"></app-tabs>
     </div>
   `
 })
 export class AppComponent implements OnInit {
   tabs: TabItem[]
+  active: Number = 1
+
   constructor(private tabService: TabService) {}
 
   ngOnInit() {
